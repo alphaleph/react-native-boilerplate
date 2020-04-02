@@ -19,6 +19,7 @@
     "native-base": "^2.13.12",
     "react": "16.9.0",
     "react-native": "^0.62.0",
+    "react-native-config": "^1.0.0",
     "react-native-gesture-handler": "^1.6.0",
     "react-native-paper": "^3.6.0",
     "react-native-reanimated": "^1.7.0",
@@ -33,6 +34,7 @@
     "@babel/core": "^7.6.2",
     "@babel/runtime": "^7.6.2",
     "@react-native-community/eslint-config": "^0.0.5",
+    "@testing-library/react-native": "^5.0.3",
     "@types/jest": "^24.0.24",
     "@types/react-native": "^0.60.25",
     "@types/react-native-vector-icons": "^6.4.5",
@@ -56,6 +58,17 @@
       "jsx",
       "json",
       "node"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.([tj]sx)$",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-navigation|react-navigation-redux-helpers|@react-navigation/.*)"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "setupFiles": [
+      "./node_modules/react-native-gesture-handler/jestSetup.js",
+      "./jest.setup.js"
     ]
   }
 }
