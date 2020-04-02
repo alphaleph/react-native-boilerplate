@@ -3,9 +3,17 @@ import React, {useState} from 'react';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {MainStackParamList} from '../navigators/MainStack';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {StyleSheet, ScrollView, View, StatusBar, Button} from 'react-native';
+import {
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  StatusBar,
+  Button,
+} from 'react-native';
 import DrawerButton from '../components/DrawerButton';
 import DarkModeButton from '../components/DarkModeButton';
+import Config from 'react-native-config';
 
 type HomeScreenNavigationProp = StackNavigationProp<MainStackParamList, 'Home'>;
 type Props = {navigation: HomeScreenNavigationProp};
@@ -42,6 +50,7 @@ const Home = ({navigation}: Props) => {
             onPress={() => navigation.navigate('FullModal')}
             title="Open Full Screen Modal"
           />
+          <Text>{Config.API_URL}</Text>
           <DrawerButton />
           <DarkModeButton text="Toggle Dark Mode" />
         </View>
