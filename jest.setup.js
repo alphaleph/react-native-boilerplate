@@ -1,5 +1,3 @@
-//TODO: Fix testing tools - TypeError: Cannot read property 'TouchableOpacity' of undefined
-
 jest.mock('react-native-gesture-handler', () => {
   // eslint-disable-next-line global-require
   const View = require('react-native/Libraries/Components/View/View');
@@ -23,6 +21,7 @@ jest.mock('react-native-gesture-handler', () => {
     PanGestureHandler: View,
     PinchGestureHandler: View,
     RotationGestureHandler: View,
+    TouchableOpacity: View,
     /* Buttons */
     RawButton: View,
     BaseButton: View,
@@ -35,4 +34,18 @@ jest.mock('react-native-gesture-handler', () => {
   };
 });
 
-jest.mock('react-native-reanimated', () => {});
+jest.mock('react-native-reanimated', () => {
+  const View = require('react-native/Libraries/Components/View/View');
+  return {
+    Value: jest.fn(),
+    event: jest.fn(),
+    add: jest.fn(),
+    eq: jest.fn(),
+    set: jest.fn(),
+    cond: jest.fn(),
+    interpolate: jest.fn(),
+    View: View,
+    Extrapolate: {CLAMP: jest.fn()},
+    TouchableOpacity: View,
+  };
+});

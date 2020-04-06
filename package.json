@@ -61,7 +61,7 @@
     ],
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.([tj]sx)$",
     "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|react-navigation|react-navigation-redux-helpers|@react-navigation/.*)"
+      "node_modules/(?!(jest-)?react-native|react-(native|universal|navigation)-(.*)|@react-native-community/(.*)|@react-navigation/(.*)|bs-platform)"
     ],
     "testPathIgnorePatterns": [
       "/node_modules/"

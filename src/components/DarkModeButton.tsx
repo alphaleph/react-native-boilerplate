@@ -36,8 +36,10 @@ export const PureDarkModeButton = ({
   return (
     <TouchableOpacity
       style={isDarkMode ? styles.isDark : styles.isLight}
-      onPress={toggleDarkMode}>
-      <Text>{text}</Text>
+      onPress={toggleDarkMode}
+      accessible={true}
+      accessibilityLabel={text}>
+      <Text testID="button-text">{text}</Text>
     </TouchableOpacity>
   );
 };
